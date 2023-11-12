@@ -1,21 +1,25 @@
 class Particle {
-  
+
   PVector position;
   PVector velocity;
   PVector acceleration;
-  
-  Particle(float x, float y){
+  float R = random(255);
+  float G = random (255);
+  float B = random (255);
+
+  Particle(float x, float y) {
     position = new PVector(x, y);
     velocity = new PVector(random(-2, 2), random(-2, 2));
     acceleration = new PVector(0, 0.5);
   }
-  
-  void update(){
+
+  void update() {
     velocity.add(acceleration);
     position.add(velocity);
   }
-  
-  void display(){
+
+  void display() {
+    fill(R, G, B);
     ellipse(position.x, position.y, 10, 10);
   }
 }
